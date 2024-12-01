@@ -10,3 +10,11 @@ function palindrome(string){
 };
 
 // console.log(palindrome("aBcba"));
+
+function emailParts(email){
+  let user = email.split("@")[0];
+  let domain = email.split("@")[1];
+  return [user, domain];
+};
+
+console.log(emailParts("abc@def.com"));
