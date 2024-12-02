@@ -90,3 +90,12 @@ function functionalLengths(elements) {
   },{});
 }
 console.log(functionalLengths(states));
+
+// reduce()練習問題
+function duplicate(array){
+  return array.reduce((total,n)=>{
+    return total *= n
+  });
+};
+array = [1,2,3,4];
+console.log(duplicate(array));
