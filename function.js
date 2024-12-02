@@ -5,7 +5,7 @@ function urlify(string){
   return string.toLowerCase().split(/\s+/).join("-");
 };
 
-// URL生成：命令型バージョン
+// map()URL生成：命令型バージョン
 function imperativeUrls(elements){
   let urls = [];
   // forEach version
@@ -16,15 +16,27 @@ function imperativeUrls(elements){
 };
 console.log(imperativeUrls(states));
 
-// URL生成：関数型バージョン
+// map()URL生成：関数型バージョン
 function functionalUrls(elements){
   return elements.map(element => urlify(element));
 };
 console.log(functionalUrls(states));
 
-// 練習問題
+// map()練習問題
 function lettersForUrl(elements){
   let domain = "https://example.com/"
   return functionalUrls(elements).map(element => domain + element);
 };
 console.log(lettersForUrl(states));
+
+// filter() ,1単語の抽出：命令バージョン
+function imperativesSingles(elements){
+  let singles = [];
+  elements.forEach(function(element){
+    if (element.split(/\s+/).length === 1){
+      singles.push(element);
+    };
+  });
+  return singles;
+};
+console.log(imperativesSingles(states));
