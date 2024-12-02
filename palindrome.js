@@ -18,14 +18,45 @@ function emailParts(email){
 };
 console.log(emailParts("abc@def.com"));
 
+// オブジェクト
 function Phrase(content){
+  // プロパティ
   this.content = content;
 
-  // パリンドローム判定
+  this.processor = function(string){
+    return string.toLowerCase();
+  };
+
+  this.processedContent = function processedContent(){
+    return this.processor(this.content);
+  };
+
+  // パリンドローム判定メソッド
   this.palindrome = function palindrome(){
-    let processedContent = this.content.toLowerCase();
-    return processedContent === reverse(processedContent);
+    return this.processedContent() === reverse(this.processedContent());
+  }
+
+  // 練習問題:大文字変換メソッド
+  this.louder = function louder(){
+    return this.content.toUpperCase();
   }
 };
-phrase = new Phrase("Racecar")
+
+// オブジェクト
+function TranslatedPhrase(content, translation){
+  this.content = content;
+  this.translation = translation;
+
+  this.processedContent = function processedContent(){
+    return this.processor(this.translation);
+  }
+}
+// 継承
+TranslatedPhrase.prototype = new Phrase();
+
+// 実行処理
+phrase = new Phrase("Racecar");
+frase = new TranslatedPhrase("recognize", "reconocer");
 console.log(phrase.palindrome())
+console.log(frase.processedContent())
+console.log(frase.palindrome())
