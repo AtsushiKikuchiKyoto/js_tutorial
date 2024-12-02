@@ -52,3 +52,22 @@ function filterByString(elements, string){
   return elements.filter(element => element.includes(string));
 };
 console.log(filterByString(states, "Dakota"));
+
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// sum: 命令型バージョン
+function imperativeSum(elements) {
+  let total = 0;
+  elements.forEach(function(n) {
+    total += n;
+  });
+  return total;
+}
+console.log(imperativeSum(numbers));
+
+// sum: 関数型バージョン
+function functionalSum(elements) {
+  return elements.reduce((total, n) => { return total += n; });
+}
+console.log(functionalSum(numbers));
