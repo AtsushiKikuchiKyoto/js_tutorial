@@ -4,13 +4,15 @@ let states = ["Kansas", "Nebraska", "North Dakota", "South Dakota"]
 function imperativeUrls(elements){
   let urls = [];
   // forEach version
-  // elements.forEach(function(element){
-    //   urls.push(element.toLowerCase().split(/\s+/).join("-"));
-    // });
-    // map version
-    elements.map((element)=>{
+  elements.forEach(function(element){
       urls.push(element.toLowerCase().split(/\s+/).join("-"));
     });
   return urls;
 };
 console.log(imperativeUrls(states));
+
+// URL生成：関数型バージョン
+function functionalUrls(elements){
+  return elements.map(element => element.toLowerCase().split(/\s+/).join("-"));
+};
+console.log(functionalUrls(states));
