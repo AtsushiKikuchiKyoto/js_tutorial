@@ -40,3 +40,9 @@ function imperativesSingles(elements){
   return singles;
 };
 console.log(imperativesSingles(states));
+
+// filter() ,1単語の抽出：関数バージョン
+function functionalSingles(elements){
+  return elements.filter(element => element.split(/\s+/).length === 1);
+};
+console.log(functionalSingles(states));
