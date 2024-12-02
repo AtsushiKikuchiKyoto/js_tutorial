@@ -1,15 +1,11 @@
 // 文字列を逆順にして返す
-function reverse(string){
-  // return string.split("").reverse().join("");
-  return Array.from(string).reverse().join("");
-};
-
-// function palindrome(string){
-//   let processedContent = string.toLowerCase();
-//   return processedContent === reverse(processedContent);
+// function reverse(string){
+// return Array.from(string).reverse().join("");
 // };
-
-// console.log(palindrome("aBcba"));
+// 注意必要：reverse()メソッドの追加
+String.prototype.reverse = function(){
+  return Array.from(this).reverse().join("");
+};
 
 function emailParts(email){
   let user = email.split("@")[0];
@@ -33,7 +29,7 @@ function Phrase(content){
 
   // パリンドローム判定メソッド
   this.palindrome = function palindrome(){
-    return this.processedContent() === reverse(this.processedContent());
+    return this.processedContent() === this.processedContent().reverse();
   }
 
   // 練習問題:大文字変換メソッド
