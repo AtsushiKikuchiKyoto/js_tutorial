@@ -49,6 +49,6 @@ console.log(functionalSingles(states));
 
 // filter() ,練習問題：Dakota抽出
 function filterByString(elements, string){
-  return elements.filter(element => element.indexOf(string) > 0);
+  return elements.filter(element => element.includes(string));
 };
 console.log(filterByString(states, "Dakota"));
