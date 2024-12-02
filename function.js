@@ -21,3 +21,10 @@ function functionalUrls(elements){
   return elements.map(element => urlify(element));
 };
 console.log(functionalUrls(states));
+
+// 練習問題
+function lettersForUrl(elements){
+  let domain = "https://example.com/"
+  return functionalUrls(elements).map(element => domain + element);
+};
+console.log(lettersForUrl(states));
