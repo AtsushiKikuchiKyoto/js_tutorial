@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "atsushikk-palindrome": "^0.1.0"
+    "atsushikk-palindrome": "^0.1.0",
+    "urllib": "^4.5.1"
   }
 }
