@@ -3,17 +3,18 @@ let Phrase = require("atsushikk-palindrome");
 function palindromeTester(){
   let string = prompt("パリンドロームをテストしたい文字列を入力してください:")
   let phrase = new Phrase(string);
+  let palindromeResult = document.querySelector("#palindromeResult");
   
   if (phrase.palindrome()){
-    alert(`"${phrase.content}"はパリンドロームです`);
+    palindromeResult.innerHTML= `"${phrase.content}"はパリンドロームです`;
   } else {
-    alert(`"${phrase.content}"はパリンドロームではありません`);
+    palindromeResult.innerHTML= `"${phrase.content}"はパリンドロームではありません`;
   };
 };
 
 document.addEventListener("DOMContentLoaded", function(){
-  let form = document.querySelector("#palindromeTester");
-  form.addEventListener("submit",function(){
+  let button = document.querySelector("#palindromeTester");
+  button.addEventListener("click",function(){
     palindromeTester();
   });
 });
