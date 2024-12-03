@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "atsushikk-palindrome": "^0.1.0",
+    "jsdom": "^25.0.1",
     "urllib": "^4.5.1"
   }
 }
