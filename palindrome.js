@@ -7,6 +7,15 @@ String.prototype.reverse = function(){
   return Array.from(this).reverse().join("");
 };
 
+// 注意必要：練習問題：blank()メソッドの追加
+String.prototype.blank = function(){
+  let re = /^\s*$/
+  return re.exec(this) != null;
+};
+// console.log("".blank()) //true
+// console.log(" ".blank()) //true
+// console.log(" a b c  ".blank()) //false
+
 function emailParts(email){
   let user = email.split("@")[0];
   let domain = email.split("@")[1];
