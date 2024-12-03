@@ -16,6 +16,13 @@ String.prototype.blank = function(){
 // console.log(" ".blank()) //true
 // console.log(" a b c  ".blank()) //false
 
+// 注意必要：練習問題：last()メソッドの追加
+Array.prototype.last = function(){
+  return this.slice(-1);
+};
+// console.log([1,2,3].last()) //[3]
+// console.log(["a","b","c"].last()) //["c"]
+
 function emailParts(email){
   let user = email.split("@")[0];
   let domain = email.split("@")[1];
